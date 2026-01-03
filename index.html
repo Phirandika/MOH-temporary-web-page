@@ -61,7 +61,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%), 
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(118, 75, 162, 0.5) 100%), 
                         url('https://i.postimg.cc/HHWfyYVP/moh4.jpg');
             background-size: cover;
             background-position: center;
@@ -73,11 +73,18 @@
             position: relative;
         }
 
-        .hero h1,
-        .hero p,
-        .hero .cta-button {
-            position: relative;
-            z-index: 1;
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero h1 {
