@@ -1,209 +1,255 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MOH Office Gonapinuwala</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>MOH Office Gonapinuwala</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f4f9f9;
-            color: #333;
-        }
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background: linear-gradient(135deg, #0f766e, #14b8a6);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
+<style>
+:root {
+    --primary: #0ea5e9;
+    --secondary: #14b8a6;
+    --dark: #0f172a;
+    --light: #f8fafc;
+}
 
-        header p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        nav {
-            background-color: #0d9488;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+body {
+    background: linear-gradient(-45deg, #0ea5e9, #14b8a6, #6366f1);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #1e293b;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            font-weight: 500;
-        }
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 
-        nav a:hover {
-            background-color: #115e59;
-        }
+/* Header */
+header {
+    text-align: center;
+    padding: 90px 20px;
+    color: white;
+}
 
-        section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+header h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
 
-        h2 {
-            color: #0f766e;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+header p {
+    margin-top: 12px;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
 
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
+nav a {
+    padding: 16px 22px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+nav a:hover {
+    background: rgba(255,255,255,0.25);
+}
 
-        .card h3 {
-            color: #0d9488;
-            margin-top: 0;
-        }
+/* Sections */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        footer {
-            background-color: #134e4a;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-            margin-top: 40px;
-        }
+section h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    color: white;
+}
 
-        footer a {
-            color: #99f6e4;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* Glass Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
 
-        .highlight {
-            background-color: #ecfeff;
-            border-left: 5px solid #14b8a6;
-            padding: 20px;
-            border-radius: 8px;
-        }
+.card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    color: #0f172a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 28px;
-            }
-        }
-    </style>
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.card i {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.contact a {
+    color: #ecfeff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(15,23,42,0.7);
+    color: #e5e7eb;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 2.3rem;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Medical Officer of Health Office</h1>
-    <p>Gonapinuwala</p>
-    <p>Protecting Community Health • Promoting Healthy Living</p>
+    <h1>MOH Office Gonapinuwala</h1>
+    <p>Protecting Community Health • Building a Healthier Future</p>
 </header>
 
 <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#programs">Health Programs</a>
+    <a href="#programs">Programs</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-    <h2>About MOH Office Gonapinuwala</h2>
-    <div class="highlight">
-        <p>
-            The Medical Officer of Health (MOH) Office – Gonapinuwala is responsible for
-            safeguarding public health through disease prevention, health promotion,
-            environmental health services, and community-based programs.
-        </p>
-        <p>
-            Our mission is to create a healthier, safer, and more informed community
-            through preventive healthcare and effective public health interventions.
-        </p>
+    <h2>About Us</h2>
+    <div class="grid">
+        <div class="card">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Our Mission</h3>
+            <p>To protect, promote and improve the health of the Gonapinuwala community through preventive healthcare.</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-people-group"></i>
+            <h3>Community Focus</h3>
+            <p>We work closely with families, schools and institutions to ensure a safe and healthy environment.</p>
+        </div>
     </div>
 </section>
 
 <section id="services">
     <h2>Our Services</h2>
-    <div class="card-container">
+    <div class="grid">
         <div class="card">
+            <i class="fa-solid fa-person-pregnant"></i>
             <h3>Maternal & Child Health</h3>
-            <p>Antenatal care, postnatal care, child nutrition, growth monitoring, and immunization services.</p>
+            <p>Antenatal clinics, child nutrition, immunization and growth monitoring.</p>
         </div>
-
         <div class="card">
-            <h3>Environmental Health</h3>
-            <p>Food safety inspections, waste management supervision, water quality monitoring, and nuisance control.</p>
+            <i class="fa-solid fa-bug-slash"></i>
+            <h3>Dengue Control</h3>
+            <p>Vector control, inspections, awareness programs and outbreak response.</p>
         </div>
-
         <div class="card">
-            <h3>Communicable Disease Control</h3>
-            <p>Dengue prevention, surveillance, outbreak control, and health education.</p>
+            <i class="fa-solid fa-utensils"></i>
+            <h3>Food Safety</h3>
+            <p>Food premises inspection, hygiene education and legal enforcement.</p>
         </div>
-
         <div class="card">
+            <i class="fa-solid fa-school"></i>
             <h3>School Health</h3>
-            <p>School medical inspections, nutrition programs, and health awareness sessions.</p>
+            <p>Medical inspections, nutrition programs and health education.</p>
         </div>
     </div>
 </section>
 
 <section id="programs">
     <h2>Public Health Messages</h2>
-    <div class="card-container">
+    <div class="grid">
         <div class="card">
-            <h3>Dengue Prevention</h3>
-            <p>Eliminate mosquito breeding places weekly. Protect your family and community.</p>
+            <i class="fa-solid fa-droplet"></i>
+            <h3>Clean Environment</h3>
+            <p>Keep surroundings clean to prevent mosquito breeding.</p>
         </div>
-
         <div class="card">
-            <h3>Food Safety</h3>
-            <p>Consume hygienically prepared food. Report unsafe food practices.</p>
+            <i class="fa-solid fa-apple-whole"></i>
+            <h3>Healthy Diet</h3>
+            <p>Balanced nutrition is key to lifelong health.</p>
         </div>
-
         <div class="card">
-            <h3>Healthy Lifestyle</h3>
-            <p>Balanced diet, regular exercise, and mental wellbeing are key to a healthy life.</p>
+            <i class="fa-solid fa-person-walking"></i>
+            <h3>Active Lifestyle</h3>
+            <p>Regular physical activity improves physical and mental wellbeing.</p>
         </div>
     </div>
 </section>
 
 <section id="contact">
     <h2>Contact Us</h2>
-    <div class="highlight">
-        <p><strong>Office:</strong> MOH Office Gonapinuwala</p>
-        <p><strong>Area:</strong> Gonapinuwala MOH Division</p>
-        <p><strong>Facebook:</strong> 
+    <div class="contact">
+        <p><strong>MOH Office – Gonapinuwala</strong></p>
+        <p>Office Hours: Monday – Friday | 8.30 AM – 4.15 PM</p>
+        <p>
+            Facebook:
             <a href="https://www.facebook.com/share/1H2cmsfAKZ/" target="_blank">
-                Visit our Facebook Page
+                Visit Official Page
             </a>
         </p>
-        <p><strong>Office Hours:</strong> Monday – Friday | 8.30 AM – 4.15 PM</p>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 MOH Office Gonapinuwala</p>
-    <p>Serving the community with dedication and care</p>
+    © 2026 MOH Office Gonapinuwala | Public Health for a Better Tomorrow
 </footer>
 
 </body>
