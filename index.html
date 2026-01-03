@@ -1,589 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOH Office Gonapinuwala - Medical Officer of Health</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOH Office Gonapinuwala - Medical Officer of Health</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+body{
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+line-height:1.6;
+color:#333;
+}
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* HEADER */
+header{
+background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+color:#fff;
+padding:1rem 0;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+nav{
+max-width:1200px;
+margin:auto;
+padding:0 2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+.logo{font-size:1.5rem;font-weight:bold}
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+.nav-links{
+display:flex;
+list-style:none;
+gap:2rem;
+}
 
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
+.nav-links a{
+color:#fff;
+text-decoration:none;
+transition:.3s;
+}
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%), 
-                        url('https://i.postimg.cc/HHWfyYVP/moh4.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            margin-top: 60px;
-            position: relative;
-        }
+.nav-links a:hover{opacity:.8}
 
-        .hero h1,
-        .hero p,
-        .hero .cta-button {
-            position: relative;
-            z-index: 1;
-        }
+/* HERO SECTION (UPDATED) */
+.hero{
+background:
+linear-gradient(
+rgba(0,0,0,0.5),
+rgba(0,0,0,0.5)
+),
+url('https://i.postimg.cc/Rq7QfyDF/moh-hero.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+color:white;
+padding:8rem 2rem 4rem;
+text-align:center;
+margin-top:60px;
+position:relative;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s;
-        }
+.hero h1{
+font-size:3rem;
+margin-bottom:1rem;
+animation:fadeInDown 1s;
+}
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s;
-        }
+.hero p{
+font-size:1.3rem;
+margin-bottom:2rem;
+animation:fadeInUp 1s;
+}
 
-        .cta-button {
-            background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
+.cta-button{
+background:white;
+color:#667eea;
+padding:1rem 2rem;
+border-radius:50px;
+font-size:1.1rem;
+text-decoration:none;
+display:inline-block;
+transition:.3s;
+}
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+.cta-button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+/* CONTAINER */
+.container{
+max-width:1200px;
+margin:auto;
+padding:4rem 2rem;
+}
 
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #667eea;
-        }
+/* SECTION TITLES */
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:3rem;
+color:#667eea;
+}
 
-        /* Gallery Section */
-        .gallery {
-            background: #fff;
-        }
+/* SERVICES */
+.services{background:#f8f9fa}
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2rem;
+}
 
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.service-card{
+background:white;
+padding:2rem;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
 
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-            background: #f0f0f0;
-        }
+/* CONTACT */
+.contact{
+background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);
+}
 
-        .gallery-item img[src=""],
-        .gallery-item img:not([src]) {
-            display: none;
-        }
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:2rem;
+}
 
-        .gallery-caption {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-weight: 600;
-        }
+.contact-card{
+background:white;
+padding:2rem;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
 
-        /* Services Section */
-        .services {
-            background: #f8f9fa;
-        }
+/* FOOTER */
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:2rem;
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
+/* ANIMATIONS */
+@keyframes fadeInDown{
+from{opacity:0;transform:translateY(-30px)}
+to{opacity:1;transform:translateY(0)}
+}
 
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+@keyframes fadeInUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
+/* MOBILE */
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:1.5rem;
+}
 
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        /* Announcements Section */
-        .announcements {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .announcement-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .announcement-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .announcement-date {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 1rem;
-        }
-
-        /* Health Tips Section */
-        .health-tips {
-            background: #fff;
-        }
-
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .tip-card {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-
-        .tip-card:hover {
-            transform: scale(1.05);
-        }
-
-        .tip-card h4 {
-            color: #d63447;
-            margin-bottom: 1rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .contact-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info {
-            margin: 1rem 0;
-        }
-
-        .contact-info strong {
-            color: #764ba2;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #667eea;
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+@media(max-width:768px){
+.nav-links{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#667eea;
+flex-direction:column;
+padding:1rem;
+}
+.nav-links.active{display:flex}
+.menu-toggle{display:block}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+.section-title{font-size:2rem}
+}
+</style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">🏥 MOH Gonapinuwala</div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#announcements">Announcements</a></li>
-                <li><a href="#health-tips">Health Tips</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>Welcome to MOH Office Gonapinuwala</h1>
-        <p>Committed to Your Health and Well-being</p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
-    </section>
+<header>
+<nav>
+<div class="logo">🏥 MOH Gonapinuwala</div>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-    <!-- Photo Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title">Our Facility</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Modern healthcare infrastructure serving the Gonapinuwala community</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://i.postimg.cc/pxB6WgCn/moh1.jpg" alt="MOH Office Building Front View" loading="lazy">
-                    <div class="gallery-caption">MOH Office Gonapinuwala - Front View</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.postimg.cc/Xnt213N0/moh2.jpg" alt="MOH Office Entrance Road" loading="lazy">
-                    <div class="gallery-caption">Office Entrance & Access Road</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.postimg.cc/5yFXQzRW/moh3.jpg" alt="MOH Office Interior View" loading="lazy">
-                    <div class="gallery-caption">Office Interior & Work Area</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="home">
+<h1>Welcome to MOH Office Gonapinuwala</h1>
+<p>Committed to Your Health and Well-being</p>
+<a href="#contact" class="cta-button">Get in Touch</a>
+</section>
 
-    <!-- Photo Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title">Our Facility</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Modern healthcare infrastructure serving the Gonapinuwala community</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,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
+<section class="services" id="services">
+<div class="container">
+<h2 class="section-title">Our Services</h2>
+<div class="services-grid">
+<div class="service-card">💉 Immunization Programs</div>
+<div class="service-card">👶 Maternal & Child Health</div>
+<div class="service-card">🩺 Health Clinics</div>
+</div>
+</div>
+</section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💉</div>
-                    <h3>Immunization Programs</h3>
-                    <p>Comprehensive vaccination services for children and adults to prevent infectious diseases.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">👶</div>
-                    <h3>Maternal & Child Health</h3>
-                    <p>Prenatal care, postnatal support, and child health monitoring services.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🦷</div>
-                    <h3>Dental Health</h3>
-                    <p>Oral health education, preventive care, and dental treatment services.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🩺</div>
-                    <h3>Health Clinics</h3>
-                    <p>Regular health check-ups, disease screening, and consultation services.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Home Visits</h3>
-                    <p>Public health nurses conduct home visits for special health needs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>Health Education</h3>
-                    <p>Community health awareness programs and educational sessions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="contact" id="contact">
+<div class="container">
+<h2 class="section-title">Contact Us</h2>
+<div class="contact-grid">
+<div class="contact-card">
+<p><strong>MOH Office Gonapinuwala</strong></p>
+<p>Gonapinuwala, Sri Lanka</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Announcements Section -->
-    <section class="announcements" id="announcements">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Latest Announcements</h2>
-            <div class="announcement-card">
-                <h3>📢 Vaccination Drive - January 2026</h3>
-                <div class="announcement-date">Posted: January 2, 2026</div>
-                <p>Special vaccination drive for children under 5 years. Please bring your child's health record. Venue: MOH Office Gonapinuwala. Time: 9:00 AM - 3:00 PM</p>
-            </div>
-            <div class="announcement-card">
-                <h3>🎯 Free Health Camp</h3>
-                <div class="announcement-date">Posted: December 28, 2025</div>
-                <p>Free general health screening camp including blood pressure, blood sugar, and cholesterol testing. All community members are welcome.</p>
-            </div>
-            <div class="announcement-card">
-                <h3>💧 Dengue Prevention Program</h3>
-                <div class="announcement-date">Posted: December 20, 2025</div>
-                <p>Community awareness program on dengue prevention. Learn about mosquito breeding prevention and early symptoms identification.</p>
-            </div>
-        </div>
-    </section>
+<footer>
+<p>© 2026 MOH Office Gonapinuwala</p>
+</footer>
 
-    <!-- Health Tips Section -->
-    <section class="health-tips" id="health-tips">
-        <div class="container">
-            <h2 class="section-title">Health Tips</h2>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h4>🥗 Balanced Diet</h4>
-                    <p>Eat a variety of fruits, vegetables, whole grains, and proteins. Avoid excessive sugar and processed foods.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>🏃 Stay Active</h4>
-                    <p>Exercise for at least 30 minutes daily. Regular physical activity improves overall health and mental well-being.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>💧 Hydration</h4>
-                    <p>Drink at least 8 glasses of water daily. Proper hydration is essential for all body functions.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>😴 Quality Sleep</h4>
-                    <p>Get 7-8 hours of sleep each night. Good sleep is crucial for physical and mental health recovery.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>🧼 Hand Hygiene</h4>
-                    <p>Wash hands frequently with soap and water for at least 20 seconds to prevent disease transmission.</p>
-                </div>
-                <div class="tip-card">
-                    <h4>🩺 Regular Check-ups</h4>
-                    <p>Visit your healthcare provider regularly for preventive care and early disease detection.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+function toggleMenu(){
+document.getElementById('navLinks').classList.toggle('active');
+}
+</script>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>📍 Office Address</h3>
-                    <div class="contact-info">
-                        <p><strong>MOH Office Gonapinuwala</strong></p>
-                        <p>Gonapinuwala</p>
-                        <p>Western Province, Sri Lanka</p>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <h3>📞 Contact Information</h3>
-                    <div class="contact-info">
-                        <p><strong>Phone:</strong> +94 XX XXX XXXX</p>
-                        <p><strong>Email:</strong> moh.gonapinuwala@health.gov.lk</p>
-                        <p><strong>Working Hours:</strong> Mon-Fri, 8:00 AM - 4:00 PM</p>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <h3>🌐 Connect With Us</h3>
-                    <div class="contact-info">
-                        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1H2cmsfAKZ/" target="_blank" style="color: #667eea;">MOH Gonapinuwala</a></p>
-                        <p><strong>Emergency:</strong> 1990 (Suwa Seriya)</p>
-                        <p><strong>Hotline:</strong> 071 XXXXXXX</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 MOH Office Gonapinuwala. All rights reserved.</p>
-        <p>Medical Officer of Health - Dedicated to Community Health</p>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    document.getElementById('navLinks').classList.remove('active');
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }
-        });
-    </script>
 </body>
 </html>
