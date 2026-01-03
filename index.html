@@ -39,8 +39,19 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             font-size: 1.5rem;
             font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            background: white;
+            padding: 5px;
         }
 
         .nav-links {
@@ -85,18 +96,6 @@
             margin-bottom: 2rem;
             animation: fadeInUp 1s;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s;
         }
 
         .cta-button {
@@ -162,11 +161,6 @@
             object-fit: cover;
             display: block;
             background: #f0f0f0;
-        }
-
-        .gallery-item img[src=""],
-        .gallery-item img:not([src]) {
-            display: none;
         }
 
         .gallery-caption {
@@ -368,6 +362,14 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -375,7 +377,10 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">🏥 MOH Office Gonapinuwala</div>
+            <div class="logo">
+                <img src="https://i.postimg.cc/jKs4qCLD/moh5.jpg" alt="MOH Logo">
+                <span>MOH Gonapinuwala</span>
+            </div>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
@@ -416,14 +421,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Photo Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title">Our Facility</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Modern healthcare infrastructure serving the Gonapinuwala community</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
 
     <!-- Services Section -->
     <section class="services" id="services">
