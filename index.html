@@ -66,6 +66,30 @@
             padding: 8rem 2rem 4rem;
             text-align: center;
             margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://i.postimg.cc/HHWfyYVP/moh4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero h1,
+        .hero p,
+        .hero .cta-button {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -405,6 +429,7 @@
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">Modern healthcare infrastructure serving the Gonapinuwala community</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <img src="data:image/jpeg;base64,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
 
     <!-- Services Section -->
     <section class="services" id="services">
